@@ -1,0 +1,29 @@
+<?php
+
+namespace Acme\CascadeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="child")
+ */
+class Child {
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     * @ORM\ManyToOne(targetEntity="Father")
+     *
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="father_id", referencedColumnName="id", onDelete="CASCADE")
+     * })
+     *
+     * @var father
+     */
+    private $father;
+}

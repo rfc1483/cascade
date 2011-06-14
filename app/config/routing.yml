@@ -1,0 +1,2 @@
+homepage:
+  resource: "@AcmeCascadeBundle/Resources/config/routing.yml"
